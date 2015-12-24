@@ -23,7 +23,7 @@
      <ion-header-bar class="bar-dark">
         <h1 class="title">todomobi</h1>
         <!-- New Task button-->
-    <button class="button button-icon" ng-click="newTaskModal()">
+    <button class="button button-icon" ng-click="openModal()">
         <i class="icon ion-compose"></i>
     </button>
      </ion-header-bar>
@@ -55,7 +55,7 @@
         </div>
       </ion-content>
     </ion-pane>
-    
+
     <!-- NEW TASK MODAL -->
     <script id="new-task-modal.html" type="text/ng-template">
         <ion-modal-view>
@@ -85,7 +85,7 @@
                                 </label>
                             </li>
                         </ul>
-                        <button type="submit" class="button button-block button-positive">Create Task</button>
+                        <button type="submit" class="button button-block button-positive" ng-click='closeTaskModal()'>Create Task</button>
                     </div>
                 </form>
             </ion-content>

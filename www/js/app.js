@@ -19,9 +19,10 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) {
   //configure the ionic modal before use
   $ionicModal.fromTemplateUrl('new-task-modal.html', {
       scope: $scope,
-      animation: 'slide-in-up'
+      animation: 'slide-in-up',
+      focusFirstInput: true
   }).then(function (modal) {
-      $scope.newTaskModal = modal;
+      $scope.modal = modal;
   });
 
   $scope.openModal = function() {
@@ -60,7 +61,7 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) {
             localStorageService.set(taskData, $scope.tasks);
             $scope.task = {};
             //close new task modal
-            $scope.newTaskModal.hide();
+            $scope.modal.hide();
      };
 
   $scope.removeTask = function (index) {
